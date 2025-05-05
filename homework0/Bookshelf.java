@@ -34,7 +34,7 @@ public class Bookshelf {
      *         i.e. the book was in the Bookshelf; false otherwise.
      */
     public boolean removeBook(Book book) {
-        return removeBook(book);
+        return shelf.remove(book);
     }
 
     /**

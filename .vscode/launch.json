@@ -1,0 +1,24 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}",
+            "args": "homework0/sample1.txt"
+        },
+        {
+            "type": "java",
+            "name": "FileStats",
+            "request": "launch",
+            "mainClass": "homework0.FileStats",
+            "projectName": "Object-Oriented-Programming-and-Design-HW0_ca56fef9"
+        }
+    ]
+}
