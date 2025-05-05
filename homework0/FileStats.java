@@ -1,3 +1,4 @@
+package homework0;
 import java.io.*;
 import java.util.StringTokenizer;
 
@@ -7,13 +8,11 @@ public class FileStats {
         // count number of numbers in the file
 
         int totalNumbers = 0;
-        int totalSum = 0;
         int positiveCount = 0;
         int negativeCount = 0;
         int zeroCount = 0;
 
         try (BufferedReader reader = new BufferedReader(in)) {
-            int sign = 1;
             String line;
             int lineNumber = 1;
 
@@ -24,20 +23,11 @@ public class FileStats {
 
                 while (tokens.hasMoreTokens()) {
                     String token = tokens.nextToken();
-                    StringTokenizer negativeSpliterTokens = new StringTokenizer(token, "-");
-
-                    while (negativeSpliterTokens.hasMoreTokens()) {
-                        String insideToken = negativeSpliterTokens.nextToken();
-
-                        if (insideToken == "") {
-                            sign = -1;
-                        } else {
                             try {
-                                int number = sign * Integer.parseInt(insideToken);
+                                int number = Integer.parseInt(token);
                                 lineCount++;
                                 totalNumbers++;
                                 lineSum += number;
-                                totalSum += number;
                                 if (number > 0) {
                                     positiveCount++;
                                 } else if (number < 0) {
@@ -45,14 +35,13 @@ public class FileStats {
                                 } else {
                                     zeroCount++;
                                 }
-                                sign = 1;
                             } catch (NumberFormatException e) {
                                 // Ignore non-integer tokens
                             }
 
                         }
-                    }
-                }
+                    
+                
 
                 double lineAverage = (double) lineSum / lineCount;
                 System.out.printf("Line %d - Average: %.2f\n", lineNumber, lineAverage);
